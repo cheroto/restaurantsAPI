@@ -1,0 +1,49 @@
+[
+    {
+      "id": 1,
+      "name": "Kibo Sushi",
+      "address": "Blabla Avenue West",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Dominos",
+      "address": "Blabla Avenue East",
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "name": "Wendy's",
+      "address": "Blabla Avenue East",
+      "rating": 4
+    }, {
+      "id": 4,
+      "name": "Cheesecake Factory",
+      "address": "Blabla Avenue East",
+      "rating": 4
+    }, 
+    {
+      "id": 5,
+      "name": "Mc Donalds",
+      "address": "Blabla Avenue East",
+      "rating": 4
+    }, 
+    {
+      "id": 6,
+      "name": "Wild Wings",
+      "address": "Blabla Avenue East",
+      "rating": 4
+    }, 
+    {
+      "id": 7,
+      "name": "Harveys",
+      "address": "Blabla Avenue East",
+      "rating": 4
+    }, 
+    {
+      "id": 8,
+      "name": "Hooters",
+      "address": "Blabla Avenue East",
+      "rating": 4
+    }
+  ]
