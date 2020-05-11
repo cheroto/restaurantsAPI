@@ -4,3 +4,9 @@ export interface IRestaurant {
     address?: string;
     rating?: number;
 }
+
+export interface INewRestaurant {
+    name: string;
+    address?: string;
+    rating?: number;
+}

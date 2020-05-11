@@ -1,11 +1,29 @@
 import { IRestaurantService } from "../interface/restaurant-service";
-import { IRestaurant } from "../interface/restaurant";
-import { injectable } from "inversify";
-import restaurants = require('../assets/mocks/restaurants.json');
+import { IRestaurant, INewRestaurant } from "../interface/restaurant";
+import { injectable, inject, named } from "inversify";
+import TYPES from "../constant/types";
+import { IRepository } from "../interface/repository";
 
 @injectable()
 export class RestaurantService implements IRestaurantService {
-    getRestaurants(): Promise<IRestaurant[]> {
-        return Promise.resolve(restaurants);
+
+    constructor(@inject(TYPES.RestaurantRepository) @named(TYPES.RestaurantRepository) private _restaurantRepository: IRepository) {      
     }
+
+    async getRestaurants(): Promise<IRestaurant[]> {
+        return await this._restaurantRepository.get({});
+    }
+
+    async addRestaurant(restaurant: INewRestaurant): Promise<IRestaurant> {
+        return await this._restaurantRepository.add(restaurant);
+    }
+
+    async deleteRestaurant(id: string): Promise<void> {        
+        return await this._restaurantRepository.delete(id);
+    }
+
+    async updateRestaurant(restaurant: IRestaurant): Promise<void> {
+        return await this._restaurantRepository.update(restaurant);
+    }
+
 }
