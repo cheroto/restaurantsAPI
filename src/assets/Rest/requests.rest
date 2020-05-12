@@ -1,6 +1,6 @@
 ### Variables
 @host = http://localhost:3000
-@id = 8
+@id = 4
 
 ### Get Restaurants
 GET {{host}}/restaurants
@@ -13,9 +13,9 @@ PUT {{host}}/restaurants/{{id}}
 Content-Type: application/json
 
 {
-    "id": 8,
-    "name": "Hooters",
-    "address": "280 Adelaide St W, Toronto, ON M5V 1P6",
+    "id": 4,
+    "name": "Pizza Hut",
+    "address": "Somewhere.",
     "rating": 4.5
 }
 
@@ -24,7 +24,7 @@ POST {{host}}/restaurants
 Content-Type: application/json
 
 {
-    "name": "Red Lobster",
-    "address": "I don't know",
-    "rating": 4.8
+    "name": "Pizza Hut",
+    "address": "Somewhere.",
+    "rating": 4.5
 }
