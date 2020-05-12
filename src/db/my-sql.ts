@@ -14,7 +14,7 @@ export class MySQLAdapter implements IDatabaseAdaptor {
         console.info('Creating connection.');
         createConnection().then(async connection => {
             this.connection = connection;
-            this.restaurantRepo = this.connection.getRepository(Restaurant);
+            this.restaurantRepo = await this.connection.getRepository(Restaurant);
             console.info('Connection Created!');
         })
         .catch(error => {
@@ -22,8 +22,10 @@ export class MySQLAdapter implements IDatabaseAdaptor {
         }); 
     }
 
-    async get(): Promise<IRestaurant[]> {
-        const restaurants = this.connection.manager.find(Restaurant);
+    async get(query: any): Promise<IRestaurant[]> {
+        let options = {};
+        if (typeof(query) === 'string') options['id'] = +query;
+        const restaurants = await this.connection.manager.find(Restaurant, options);
         console.info('MySQLAdapter.get(): Restaurants retrieved succesfully');
         return restaurants;
     }
@@ -32,7 +34,7 @@ export class MySQLAdapter implements IDatabaseAdaptor {
         let restaurantEntity = (await this.restaurantRepo.findOneOrFail(restaurant.id));
         if (restaurantEntity) {
             restaurantEntity = restaurant;
-            this.restaurantRepo.save(restaurantEntity);
+            await this.restaurantRepo.save(restaurantEntity);
             console.error('InMemoryDatabase.update(): Restaurant updated succesfully.');
         } else {
             console.info('InMemoryDatabase.update(): Restaurant not found.');

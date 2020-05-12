@@ -14,6 +14,10 @@ export class RestaurantService implements IRestaurantService {
         return await this._restaurantRepository.get({});
     }
 
+    async getRestaurant(id: string): Promise<IRestaurant> {
+        return (await this._restaurantRepository.get(id))[0];
+    }
+
     async addRestaurant(restaurant: INewRestaurant): Promise<IRestaurant> {
         return await this._restaurantRepository.add(restaurant);
     }

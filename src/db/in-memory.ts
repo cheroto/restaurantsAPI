@@ -11,9 +11,13 @@ export class InMemoryDatabase implements IDatabaseAdaptor {
         this.restaurants = restaurants;
     }
 
-    async get(): Promise<IRestaurant[]> {
+    async get(query: any): Promise<IRestaurant[]> {
         console.info('InMemoryDatabase.get(): Restaurants retrieved succesfully');
-        return Promise.resolve(this.restaurants);
+        if (typeof(query) === 'string') {
+            return Promise.resolve(this.restaurants.filter((r) => r.id === +query ));
+        } else {
+            return Promise.resolve(this.restaurants);
+        }
     }
 
     async update(restaurant: IRestaurant): Promise<void> {
