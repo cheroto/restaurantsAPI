@@ -43,3 +43,4 @@ temp
 package-lock.json
 
 ormconfig.json
+.env

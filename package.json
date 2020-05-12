@@ -9,12 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^13.13.5",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "inversify": "^5.0.1",
     "inversify-express-utils": "^6.3.2",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
-    "typescript": "^3.8.3",
-    "typeorm": "0.2.24"
+    "typeorm": "0.2.24",
+    "typescript": "^3.8.3"
   }
 }

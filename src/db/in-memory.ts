@@ -8,6 +8,7 @@ export class InMemoryDatabase implements IDatabaseAdaptor {
     restaurants: IRestaurant[];
 
     constructor() {
+        console.info('Running in memory database!');
         this.restaurants = restaurants;
     }
 
