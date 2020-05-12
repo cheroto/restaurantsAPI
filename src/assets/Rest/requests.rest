@@ -1,0 +1,30 @@
+### Variables
+@host = http://localhost:3000
+@id = 4
+
+### Get Restaurants
+GET {{host}}/restaurants
+
+### Delete Restaurant
+DELETE {{host}}/restaurants/{{id}}
+
+### Update Restaurant
+PUT {{host}}/restaurants/{{id}}
+Content-Type: application/json
+
+{
+    "id": 4,
+    "name": "Pizza Hut",
+    "address": "Somewhere.",
+    "rating": 4.5
+}
+
+### Add Restaurant
+POST {{host}}/restaurants
+Content-Type: application/json
+
+{
+    "name": "Pizza Hut",
+    "address": "Somewhere.",
+    "rating": 4.5
+}
