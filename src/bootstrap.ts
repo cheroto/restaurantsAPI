@@ -24,7 +24,12 @@ server.setConfig((app) => {
 });
 
 let serverInstance = server.build();
-const port = +process.env.port;
+let port: number;
+if (process.env.port) {
+  port = +process.env.port;
+} else {
+  port = 8080;
+}
 serverInstance.listen(port);
 
 console.log(`Server started on port ${port} :)`);
