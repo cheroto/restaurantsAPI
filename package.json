@@ -17,11 +17,11 @@
     "inversify-express-utils": "^6.3.2",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "0.2.24"
+    "typeorm": "0.2.24",    
+    "tsc": "^1.20150623.0",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
-    "tsc": "^1.20150623.0",
-    "rimraf": "^3.0.2",
     "@types/node": "^13.13.5",
     "dotenv": "^8.2.0",
     "typescript": "^3.9.2"
