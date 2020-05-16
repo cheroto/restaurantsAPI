@@ -8,7 +8,7 @@ COPY package*.json ./
 COPY . .
 RUN rm -frv .env
 
-RUN npm install
+RUN npm install --only=prod
 RUN npm run build
 
 
