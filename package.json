@@ -2,9 +2,12 @@
   "name": "restaurant-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/bootstrap.js",
+  "directories": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist/*",
+    "build": "npm run clean && npm run tsc",
+    "tsc": "tsc"
   },
   "author": "",
   "license": "ISC",
@@ -14,7 +17,13 @@
     "inversify-express-utils": "^6.3.2",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
-    "typescript": "^3.8.3",
     "typeorm": "0.2.24"
+  },
+  "devDependencies": {
+    "tsc": "^1.20150623.0",
+    "rimraf": "^3.0.2",
+    "@types/node": "^13.13.5",
+    "dotenv": "^8.2.0",
+    "typescript": "^3.9.2"
   }
 }

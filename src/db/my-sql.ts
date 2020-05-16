@@ -11,7 +11,7 @@ export class MySQLAdapter implements IDatabaseAdaptor {
     private restaurantRepo: Repository<Restaurant>;
 
     constructor() {
-        console.info('Creating connection.');
+        console.info('Creating connection on mySQL Database.');
         createConnection().then(async connection => {
             this.connection = connection;
             this.restaurantRepo = await this.connection.getRepository(Restaurant);

@@ -3,6 +3,7 @@ import { InversifyExpressServer } from 'inversify-express-utils';
 import * as bodyParser from 'body-parser';
 import './controller/health';
 import './controller/restaurant';
+require('dotenv').config()
 import container from './ioc';
 
 
@@ -23,6 +24,12 @@ server.setConfig((app) => {
 });
 
 let serverInstance = server.build();
-serverInstance.listen(3000);
+let port: number;
+if (process.env.port) {
+  port = +process.env.port;
+} else {
+  port = 8080;
+}
+serverInstance.listen(port);
 
-console.log('Server started on port 3000 :)');
+console.log(`Server started on port ${port} :)`);

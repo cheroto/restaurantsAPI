@@ -1,4 +1,5 @@
-{     "compilerOptions": {
+{
+    "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
         "lib": [
@@ -6,13 +7,15 @@
             "dom"
         ],
         "noImplicitAny": false,
-        "sourceMap": false,
+        "sourceMap": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "moduleResolution": "node",
         "noUnusedLocals": true,
         "resolveJsonModule": true,
         "esModuleInterop": true,
+        "outDir": "./dist",
+        "skipLibCheck": true    
     },
     "compileOnSave": false,
     "exclude": [
