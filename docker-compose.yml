@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+    api:
+        image: restaurantsapi
+        ports:
+            - 4000:4000
+        environment:
+            - database=mySQL
+            - port=4000
