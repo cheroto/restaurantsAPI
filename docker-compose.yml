@@ -1,7 +1,7 @@
 version: "3.7"
 services:
     api:
-        image: restaurants-api
+        image: restaurantsapi
         ports:
             - 4000:4000
         environment:
