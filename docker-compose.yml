@@ -7,3 +7,8 @@ services:
         environment:
             - database=local
             - port=4000
+        networks: 
+            - restaurants
+networks: 
+    restaurants:
+        name: restaurants-network
