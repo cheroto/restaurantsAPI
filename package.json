@@ -21,10 +21,7 @@
     "tsc": "^1.20150623.0",
     "rimraf": "^3.0.2",
     "typescript": "^3.9.2",
-    "@types/node": "^13.13.5"
-
-  },
-  "devDependencies": {
+    "@types/node": "^13.13.5",
     "dotenv": "^8.2.0"
   }
 }
